@@ -1,6 +1,6 @@
 <template>
-  <div class="squad">
-    <h1>{{ heading }}</h1>
+  <div class="squad mt-3">
+    <h1 class="text-center">{{ heading }}</h1>
   </div>
 </template>
 

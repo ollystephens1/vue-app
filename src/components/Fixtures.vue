@@ -1,6 +1,6 @@
 <template>
-  <div class="fixtures">
-    <h1>{{ heading }}</h1>
+  <div class="fixtures mt-3">
+    <h1 class="text-center">{{ heading }}</h1>
   </div>
 </template>
 

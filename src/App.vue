@@ -1,16 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/arsenal-logo.png">
-    <ul>
-      <li v-for="(link, index) in routes" :key="index">
-       <router-link v-bind:to="link.link">{{ link.name }}</router-link>
-      </li>
-    </ul>
+    <nav class="flex items-center justify-between flex-wrap bg-red p-6">
+      <div class="flex items-center flex-no-shrink text-white mr-6">
+        <img width="54" height="54"  src="./assets/arsenal-icon.png">
+      </div>
+      <div class="block lg:hidden">
+        <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        </button>
+      </div>
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+          <router-link v-for="(link, index) in routes" :key="index" v-bind:to="link.link" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-teal mr-4">{{ link.name }}</router-link>
+        </div>
+      </div>
+    </nav>
     <router-view/>
   </div>
 </template>
 
 <script>
+import '@/assets/styles/main.css';
+
 export default {
   name: 'App',
   data() {
@@ -31,9 +42,7 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #484848;
-  margin-top: 60px;
 }
 ul {
   list-style-type: none;
