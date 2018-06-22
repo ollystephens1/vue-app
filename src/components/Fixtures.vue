@@ -9,8 +9,16 @@ export default {
   name: 'Fixtures',
   data() {
     return {
-      heading: 'Fixtures 2018/19'
+      heading: 'Fixtures 2018/19',
+      fixtures: []
     };
+  },
+  created: function() {
+    this.$http.get('http://api.football-data.org/v1/teams/57/fixtures?season=2019')
+      .then((response) => {
+        this.fixtures = response.body.fixtures;
+      })
+      .catch(err => console.log(err));
   }
 };
 </script>
