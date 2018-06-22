@@ -1,6 +1,8 @@
 <template>
-  <div class="squad mt-3">
+  <div class="squad mt-3 p-4">
     <h1 class="text-center mb-2">{{ heading }}</h1>
+
+    <spinner v-if="!loaded"></spinner>
 
     <div class="flex flex-wrap items-center">
       <div v-for="(player, index) in squad" :key="index" class="max-w-sm rounded overflow-hidden shadow-lg m-2">
@@ -25,13 +27,15 @@ export default {
   data() {
     return {
       heading: 'Squad',
-      squad: []
+      squad: [],
+      loaded: false
     };
   },
   created: function() {
     this.$http.get('https://api.football-data.org/v1/teams/57/players')
       .then((response) => {
         this.squad = response.body.players;
+        this.loaded = true;
       })
       .catch(err => console.log(err));
   }
