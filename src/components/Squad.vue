@@ -29,7 +29,7 @@ export default {
     };
   },
   created: function() {
-    this.$http.get('http://api.football-data.org/v1/teams/57/players')
+    this.$http.get('https://api.football-data.org/v1/teams/57/players')
       .then((response) => {
         this.squad = response.body.players;
       })
