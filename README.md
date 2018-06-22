@@ -2,6 +2,8 @@
 
 Arsenal's 2018/19 season, brought to you by Vue.js
 
+Powered by [Football Data API](https://api.football-data.org/documentation)
+
 [Live demo](https://arsenal-vue.firebaseapp.com)
 
 ## Build Setup
