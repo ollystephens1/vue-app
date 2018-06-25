@@ -13,7 +13,7 @@ export default {
       fixtures: []
     };
   },
-  created: function() {
+  created() {
     this.$http.get('https://api.football-data.org/v1/teams/57/fixtures?season=2019')
       .then((response) => {
         this.fixtures = response.body.fixtures;

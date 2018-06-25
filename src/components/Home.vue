@@ -49,7 +49,7 @@ export default {
       loaded: false
     };
   },
-  created: function() {
+  created() {
     this.$http.get('https://api.football-data.org/v1/competitions/445/leagueTable')
       .then((response) => {
         this.standings = response.body.standing;
@@ -59,8 +59,3 @@ export default {
   }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>

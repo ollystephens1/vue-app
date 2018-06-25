@@ -31,7 +31,7 @@ export default {
       loaded: false
     };
   },
-  created: function() {
+  created() {
     this.$http.get('https://api.football-data.org/v1/teams/57/players')
       .then((response) => {
         this.squad = response.body.players;
